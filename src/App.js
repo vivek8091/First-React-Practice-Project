@@ -1,11 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./Components/Header";
+import Home from "./Components/Home";
+import About from "./Components/About";
 
 function App() {
   return (
@@ -24,21 +22,11 @@ function App() {
           Learn React
         </a>
 
-       
-
         <BrowserRouter>
-
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-          <Link to="/About">About</Link>
-          </li>
-        </ul>
+          <Header />
           <Routes>
-            <Route path="/" element="{<Home />}" />
-            <Route path="/About" element="{<About />}" />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </BrowserRouter>
       </header>
